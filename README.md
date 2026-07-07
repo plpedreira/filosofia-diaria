@@ -15,7 +15,9 @@ The goal of this project is to provide accessible philosophical content through 
 ## 🚧 Roadmap
 
 - [x] Project setup with React + Vite
-- [ ] Philosophy card component
+- [x] Create PhilosophyCard component
+- [x] Implement React props
+- [ ] Pass complete philosophy object to the component
 - [ ] Daily philosophy rotation
 - [ ] Favorites system
 - [ ] Dark mode
