@@ -1,20 +1,21 @@
-function PhilosophyCard(props: {
-  philosophy: {
-    titulo: string;
-    resumo: string;
-    texto: string;
-  };
-}) {
+type Philosophy = {
+  titulo: string;
+  resumo: string;
+  texto: string;
+};
+
+type PhilosophyCardProps = {
+  philosophy: Philosophy;
+};
+
+function PhilosophyCard(props: PhilosophyCardProps) {
   return (
     <div>
-      <h2>{props.titulo}</h2>
-      
-      <p>Lembre-se de que você vai morrer.</p>
+      <h2>{props.philosophy.titulo}</h2>
 
-      <p>
-        Memento Mori é uma expressão em latim utilizada para lembrar que a vida
-        é finita...
-      </p>
+      <p>{props.philosophy.resumo}</p>
+
+      <p>{props.philosophy.texto}</p>
     </div>
   );
 }
