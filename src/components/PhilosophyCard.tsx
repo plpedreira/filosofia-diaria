@@ -1,3 +1,5 @@
+import "./PhilosophyCard.css";
+
 type Philosophy = {
   titulo: string;
   resumo: string;
@@ -10,13 +12,15 @@ type PhilosophyCardProps = {
 
 function PhilosophyCard(props: PhilosophyCardProps) {
   return (
-    <div>
+    <article className="philosophy-card">
+      <span className="tag">Filosofia diária</span>
+      
       <h2>{props.philosophy.titulo}</h2>
 
-      <p>{props.philosophy.resumo}</p>
+      <p className="resume">{props.philosophy.resumo}</p>
 
-      <p>{props.philosophy.texto}</p>
-    </div>
+      <p className="text">{props.philosophy.texto}</p>
+    </article>
   );
 }
 
