@@ -1,14 +1,21 @@
 import PhilosophyCard from "./components/PhilosophyCard";
 import philosophies from "./data/philosophies";
+import { useState } from "react";
 
 function App() {
-  const hoje = new Date();
-  const dia = hoje.getDate();
-  const indice = dia % philosophies.length;
+  const [indice, setIndice] = useState(0);
 
   return (
     <div>
       <PhilosophyCard philosophy={philosophies[indice]} />
+
+      <button
+        onClick={() => {
+          setIndice((indice + 1)% philosophies.length);
+        }}
+      >
+        Outra filosofia
+      </button>
     </div>
   );
 }

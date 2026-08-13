@@ -23,15 +23,18 @@
 
 .text {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   line-height: 1.6;
 }
 
 .tag {
-  display: block;
+  display: inline-block;
   text-align: center;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #eee;
 }
