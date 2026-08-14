@@ -3,7 +3,9 @@ import philosophies from "./data/philosophies";
 import { useState } from "react";
 
 function App() {
-  const [indice, setIndice] = useState(0);
+  const hoje = new Date();
+  const dia = hoje.getDate();
+  const [indice, setIndice] = useState(dia % philosophies.length);
 
   return (
     <div>
