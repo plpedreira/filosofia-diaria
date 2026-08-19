@@ -1,6 +1,7 @@
 import PhilosophyCard from "./components/PhilosophyCard";
 import philosophies from "./data/philosophies";
 import { useState } from "react";
+import "./App.css"
 
 function App() {
   const hoje = new Date();
@@ -24,25 +25,45 @@ function App() {
   }
 
   return (
-    <div>
-      <PhilosophyCard philosophy={philosophies[indice]} />
+    <div className="app">
 
-      <button onClick={proximaFilosofia}>
-        Outra filosofia
-      </button>
+      <header className="header">
+        <h1>Filosofia Diária</h1>
+        <p>Uma reflexão para cada dia.</p>
+      </header>
 
-      <button onClick={favoritarFilosofia}>
-        {favoritos.includes(indice) ? "Desfavoritar" : "Favoritar"}
-      </button>
+      <main className="main">
 
-      <h2>Favoritos</h2>
+        <section className="daily-philosophy">
+          <PhilosophyCard philosophy={philosophies[indice]} />
 
-      {favoritos.map((favorito) => (
-        <PhilosophyCard
-          key={favorito}
-          philosophy={philosophies[favorito]}
-        />
-      ))}
+          <div className="actions">
+            <button onClick={proximaFilosofia}>
+              Outra filosofia
+            </button>
+
+            <button
+              className="favorite-button"
+              onClick={favoritarFilosofia}
+            >
+              {favoritos.includes(indice) ? "♥ Desfavoritar" : "♡ Favoritar"}
+            </button>
+          </div>
+        </section>
+
+        <section className="favorites">
+          <h2>Favoritos</h2>
+
+          {favoritos.map((favorito) => (
+            <PhilosophyCard
+              key={favorito}
+              philosophy={philosophies[favorito]}
+            />
+          ))}
+        </section>
+
+      </main>
+
     </div>
   );
 }
