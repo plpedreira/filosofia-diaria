@@ -52,7 +52,7 @@ function App() {
         </section>
 
         <section className="favorites">
-          <h2>Favoritos</h2>
+          <h2>Favoritos {favoritos.length}</h2>
 
           {favoritos.map((favorito) => (
             <PhilosophyCard
