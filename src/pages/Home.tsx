@@ -1,14 +1,37 @@
+import {
+  useState,
+  useEffect,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 import PhilosophyCard from "../components/PhilosophyCard";
 import philosophies from "../data/philosophies";
-import { useState } from "react";
-import "../App.css"
+import "../App.css";
 
-function Home() {
+type HomeProps = {
+  favoritos: number[];
+  setFavoritos: Dispatch<SetStateAction<number[]>>;
+};
+
+function Home({ favoritos, setFavoritos }: HomeProps) {
   const hoje = new Date();
   const dia = hoje.getDate();
 
-  const [indice, setIndice] = useState(dia % philosophies.length);
-  const [favoritos, setFavoritos] = useState<number[]>([]);
+  const [indice, setIndice] = useState(
+    dia % philosophies.length
+  );
+
+  const [notificacao, setNotificacao] = useState("");
+
+  useEffect(() => {
+    if (!notificacao) return;
+
+    const timer = setTimeout(() => {
+      setNotificacao("");
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, [notificacao]);
 
   function proximaFilosofia() {
     setIndice((indice + 1) % philosophies.length);
@@ -19,52 +42,57 @@ function Home() {
       setFavoritos(
         favoritos.filter((favorito) => favorito !== indice)
       );
+
+      setNotificacao("Filosofia removida dos favoritos");
     } else {
       setFavoritos([...favoritos, indice]);
+
+      setNotificacao("Filosofia adicionada aos favoritos");
     }
   }
 
   return (
-    <div className="app">
+    <>
+      {notificacao && (
+        <div className="notification">
+          ✓ {notificacao}
+        </div>
+      )}
 
-      <header className="header">
-        <h1>Filosofia Diária</h1>
-        <p>Uma reflexão para cada dia.</p>
-      </header>
+      <div className="app">
 
-      <main className="main">
+        <header className="header">
+          <h1>Filosofia Diária</h1>
+          <p>Uma reflexão para cada dia.</p>
+        </header>
 
-        <section className="daily-philosophy">
-          <PhilosophyCard philosophy={philosophies[indice]} />
+        <main className="main">
 
-          <div className="actions">
-            <button onClick={proximaFilosofia}>
-              Outra filosofia
-            </button>
-
-            <button
-              className="favorite-button"
-              onClick={favoritarFilosofia}
-            >
-              {favoritos.includes(indice) ? "♥ Desfavoritar" : "♡ Favoritar"}
-            </button>
-          </div>
-        </section>
-
-        <section className="favorites">
-          <h2>Favoritos {favoritos.length}</h2>
-
-          {favoritos.map((favorito) => (
+          <section className="daily-philosophy">
             <PhilosophyCard
-              key={favorito}
-              philosophy={philosophies[favorito]}
+              philosophy={philosophies[indice]}
             />
-          ))}
-        </section>
 
-      </main>
+            <div className="actions">
+              <button onClick={proximaFilosofia}>
+                Outra filosofia
+              </button>
 
-    </div>
+              <button
+                className="favorite-button"
+                onClick={favoritarFilosofia}
+              >
+                {favoritos.includes(indice)
+                  ? "♥ Desfavoritar"
+                  : "♡ Favoritar"}
+              </button>
+            </div>
+          </section>
+
+        </main>
+
+      </div>
+    </>
   );
 }
 
