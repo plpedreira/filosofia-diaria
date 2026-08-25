@@ -115,6 +115,7 @@ button {
   background: #8b5cf6 !important;
 }
 
+
 /* =========================
    Notifications
 ========================= */
@@ -151,20 +152,50 @@ button {
   }
 }
 
+
 /* =========================
-   Favorites
+   Favorites Page
 ========================= */
 
-.favorites {
-  margin-top: 60px;
-  padding-top: 30px;
-  border-top: 1px solid #292930;
+.favorites-page {
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
-.favorites h2 {
-  margin-bottom: 25px;
-  text-align: center;
+.favorites-page .main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.favorites-page h1 {
+  margin: 0 0 30px;
+  font-size: 36px;
+}
+
+
+/* =========================
+   Favorite Cards
+========================= */
+
+.favorites-page .philosophy-card {
+  padding: 25px 30px;
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+.favorites-page .philosophy-card h2 {
   font-size: 28px;
+  margin: 8px 0 14px;
+}
+
+.favorites-page .philosophy-card .resume {
+  font-size: 17px;
+  margin-bottom: 16px;
+}
+
+.favorites-page .philosophy-card .text {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 
@@ -180,8 +211,10 @@ button {
 .about section {
   padding: 30px;
   margin-bottom: 30px;
+
   border: 1px solid #292930;
   border-radius: 20px;
+
   background: #17171c;
 }
 
@@ -218,11 +251,15 @@ button {
 
 .social-links a {
   padding: 10px 16px;
+
   border-radius: 10px;
-  background: #202027;
   border: 1px solid #33333d;
+
+  background: #202027;
+
   color: #f5f5f5;
   text-decoration: none;
+
   transition: 0.2s ease;
 }
 
@@ -252,10 +289,11 @@ button {
   .social-links a {
     text-align: center;
   }
+
   .notification {
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  text-align: center;
-}
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+  }
 }

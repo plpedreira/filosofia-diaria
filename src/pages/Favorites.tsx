@@ -7,7 +7,7 @@ type FavoritesProps = {
 
 function Favorites({ favoritos }: FavoritesProps) {
   return (
-    <div className="app">
+    <div className="favorites-page">
       <main className="main">
         <h1>Favoritos</h1>
 

@@ -5,10 +5,17 @@ function About() {
         <h1>Sobre o Filosofia Diária</h1>
 
         <p>
-          O Filosofia Diária é um projeto criado para trazer diferentes ideias
-          e conceitos filosóficos para o dia a dia. A proposta é apresentar uma
-          filosofia por vez, permitindo que cada pessoa conheça seu significado,
-          contexto e encontre novas formas de refletir sobre a própria vida.
+          O Filosofia Diária é um projeto criado com o objetivo de aproximar
+          diferentes ideias e conceitos filosóficos do cotidiano. A proposta é
+          apresentar uma filosofia por vez, permitindo que cada pessoa conheça
+          seu significado, sua origem e diferentes formas de aplicar essas
+          ideias no dia a dia.
+        </p>
+
+        <p>
+          O projeto também busca transformar a filosofia em algo mais acessível,
+          mostrando que conceitos desenvolvidos há séculos ainda podem ajudar
+          na maneira como enxergamos nossas escolhas, desafios e experiências.
         </p>
       </section>
 
@@ -17,10 +24,10 @@ function About() {
 
         <p>
           Meu nome é Pedro Lucas, sou estudante de Ciência da Computação e
-          desenvolvedor apaixonado por tecnologia e desenvolvimento web.
-          Criei o Filosofia Diária como uma forma de colocar meus conhecimentos
-          em prática enquanto desenvolvo um projeto que também tenha um
-          significado pessoal.
+          desenvolvedor com foco em desenvolvimento web. Criei o Filosofia
+          Diária como parte da minha jornada de aprendizado, utilizando o
+          desenvolvimento de uma aplicação real para colocar meus conhecimentos
+          em prática e continuar evoluindo como desenvolvedor.
         </p>
 
         <div className="social-links">
